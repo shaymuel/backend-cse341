@@ -1,11 +1,29 @@
-const mongoose = require('mongoose');
+//env variables
+const dotenv = require('dotenv');
+dotenv.config();
 
-const URI = "mongodb+srv://dbuser:dbpassword@cluster0.lgyud.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+//database
+const MongoClient = require('mongodb').MongoClient;
 
-const connectDB = async() => {
-    await mongoose.connect(URI)
-    console.log('Mongo is now connected!')
+let _client;
+let _collection;
+
+const initDatabase = () => {
+    MongoClient.connect(process.env.MONGODB_URI, (err, client) => {
+        if (err) throw err;
+        _client = client
+        _collection = _client.db("MongoDB").collection("contacts");
+        // dbo.collection("contacts").find().toArray((err, result) => {//   if (err) throw err;//   res.json(result);//   db.close()// });
+        console.log("Database Connected")
+    });
 }
 
-module.exports = connectDB;
+const getCollection = () => {
 
+    return _collection;
+}
+
+module.exports = {
+    initDatabase,
+    getCollection
+};
