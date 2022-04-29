@@ -1,0 +1,23 @@
+#localhost general connection
+GET http://localhost:3000/
+###
+#localhost contacts connection
+GET http://localhost:3000/contacts
+###
+#localhost contacts connection
+GET http://localhost:3000/home
+###
+#localhost contact one connection
+GET http://localhost:3000/contacts/626b328bade2a109c9a42da2
+###
+#heroku app general connection
+GET https://cse341-webapi.herokuapp.com/
+###
+#localhost contacts connection
+GET https://cse341-webapi.herokuapp.com/contacts
+###
+#localhost contacts connection
+GET https://cse341-webapi.herokuapp.com/home
+###
+#localhost contact one connection
+GET https://cse341-webapi.herokuapp.com/contacts/626b328bade2a109c9a42da2
