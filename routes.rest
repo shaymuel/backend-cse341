@@ -1,3 +1,4 @@
+#week 2 GET requests
 #localhost general connection
 GET http://localhost:3000/
 ###
@@ -21,3 +22,35 @@ GET https://cse341-webapi.herokuapp.com/home
 ###
 #localhost contact one connection
 GET https://cse341-webapi.herokuapp.com/contacts/626b328bade2a109c9a42da2
+###
+
+#week3 get requests
+#get all contacts
+GET http://localhost:3000/contacts
+###
+#create a new contact
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Beki",
+    "lastName": "Smith",
+    "email": "none5@none.com",
+    "favoriteColor": "Gold",
+    "birthday": "06/08/2021"
+}
+###
+#update a contact
+PUT http://localhost:3000/contacts/626b328bade2a109c9a42da2 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Lynn",
+    "lastName": "Smith",
+    "email": "none1@none.com",
+    "favoriteColor": "Purple",
+    "birthday": "06/08/2021"
+}
+###
+#delete a contact
+DELETE http://localhost:3000/contacts/627587b260481af72d0c8ffc HTTP/1.1

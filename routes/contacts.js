@@ -1,24 +1,19 @@
 const routes = require('express').Router();
-const connect = require('../db/connect');
-const ObjectId = require('mongodb').ObjectId;
+const contactsController = require('../controllers/contacts');
 
-routes.get('/', (req, res) => {
-  const results = connect.getCollection("contacts").find();
-  results.toArray().then((documents) => {
-    res.status(200).json(documents);
-    console.log('Returned All Contacts');
-  });
-});
+//gets all the contacts
+routes.get('/', contactsController.getAllContacts);
 
-routes.get('/:id', (req, res) => {
-  const contactId = new ObjectId(req.params.id)
-  const results = connect.getCollection("contacts").find({_id: contactId});
-  results.toArray().then((documents) => {
-    res.status(200).json(documents[0]);
-    console.log('Returned One Contact');
-  });
-});
+//gets a single contact by id
+routes.get('/:id', contactsController.getSingleContact);
 
+//Add a new contact
+routes.post('/', contactsController.createNewContact);
 
+//update a contact
+routes.put('/:id', contactsController.updateContact);
+
+//delete a contact
+routes.delete('/:id', contactsController.deleteContact);
 
 module.exports = routes;
