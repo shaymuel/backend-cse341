@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Shayla's Contact API",
-    "description": "A list of all all my imaginary friends.",
+    "description": "A list of all my imaginary friends.",
     "version": "1.0.0"
   },
   "host": "cse341-webapi.herokuapp.com",
@@ -11,33 +11,11 @@
     "https"
   ],
   "paths": {
-    "/": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api-docs": {
       "get": {
         "description": "",
         "parameters": [],
         "responses": {}
-      }
-    },
-    "/home/": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     },
     "/contacts/": {
@@ -51,7 +29,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create a new contact",
         "parameters": [
           {
             "name": "body",
@@ -90,7 +68,7 @@
     },
     "/contacts/{id}": {
       "get": {
-        "description": "",
+        "description": "Get one contact by Id",
         "parameters": [
           {
             "name": "id",
@@ -106,7 +84,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update a contact by Id",
         "parameters": [
           {
             "name": "id",
@@ -149,7 +127,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete a contact by Id",
         "parameters": [
           {
             "name": "id",
