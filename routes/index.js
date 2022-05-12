@@ -4,6 +4,7 @@ routes.get('/', (req, res) => {
   res.send('Konnor Mueller')
 })
 
+routes.use('/', require('./swagger'));
 routes.use('/home', require('./home'))
 routes.use('/contacts', require('./contacts'))
 
