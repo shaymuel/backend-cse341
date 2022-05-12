@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My API",
-    "description": "Description",
+    "title": "Shayla's Contact API",
+    "description": "A list of all all my imaginary friends.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-webapi.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -22,6 +22,13 @@
         }
       }
     },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
     "/home/": {
       "get": {
         "description": "",
@@ -35,11 +42,11 @@
     },
     "/contacts/": {
       "get": {
-        "description": "Gets all contacts from database",
+        "description": "",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Got'em"
+            "description": "OK"
           }
         }
       },
